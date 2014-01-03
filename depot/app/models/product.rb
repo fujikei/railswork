@@ -6,4 +6,5 @@ class Product < ActiveRecord::Base
 		with: %r{\.(gif|jpg|png)\z}i,
 		message: 'It is wrong.' 
 	}
+	validates :title, length: {minimum: 10, too_short: 'please enter at least 10 characters'}
 end
