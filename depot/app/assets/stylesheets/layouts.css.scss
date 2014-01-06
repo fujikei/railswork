@@ -1,0 +1,33 @@
+#banner {
+	border-bottom: 2px solid;
+	text-align: center;
+
+	img{
+		float: left;
+	}
+}
+#notice {
+	border: 2px solid red;
+}
+#columns {
+	#main{
+		margin-left: 17em;
+		padding: 1em;
+	}
+	#side{
+		float: left;
+		width: 13em;
+		ul{
+			padding: 0;
+			li{
+				list-style: none;
+
+				a{
+					color: #bfb;
+					font-size: small;
+				}
+			}
+		}
+
+	}
+}
