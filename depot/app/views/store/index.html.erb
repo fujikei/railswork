@@ -4,15 +4,22 @@
 
 <h1>Pragmatic Catalog</h1>
 
+<% if @counter >= 5 %>
+<p>
+	あなたは<%= @counter %>回目の訪問です！
+</p>
+<% end %>
+
 <% @products.each do |product| %>
-	<div class="entry">
-		<%= image_tag(product.image_url) %>
-		<h3><%= product.title %></h3>
-		<p>
+<div class="entry">
+	<%= image_tag(product.image_url) %>
+	<h3><%= product.title %></h3>
+	<p>
 		<%= sanitize(product.description) %>
-		</p>
-		<div class="price_line">
-			<span class="price"><%= number_to_currency(product.price) %></span>
-		</div>
+	</p>
+	<div class="price_line">
+		<span class="price"><%= number_to_currency(product.price) %></span>
+		<%= button_to 'カートに入れる', line_items_path(product_id: product) %>
 	</div>
+</div>
 <% end %>
